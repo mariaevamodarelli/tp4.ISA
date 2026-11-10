@@ -1,0 +1,4 @@
+node_modules/
+
+# Plan temporal generado por ZAP
+zap.yaml
