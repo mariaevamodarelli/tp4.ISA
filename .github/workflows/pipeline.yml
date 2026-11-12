@@ -19,7 +19,9 @@ jobs:
       - run: npm audit --audit-level=high
       # SAST: patrones peligrosos en el código fuente
       - run: pip install semgrep
-      - run: semgrep scan --config auto --error
+      # El HTML generado por ZAP es evidencia: contiene las URL HTTP del laboratorio local.
+      # Se excluye solo ese reporte; el código de la aplicación sigue bajo análisis.
+      - run: semgrep scan --config auto --error --exclude evidencias/zap.html
       # Detección de secretos en el código y el historial
       - uses: gitleaks/gitleaks-action@ff98106e4c7b2bc287b24eaf42907196329070c7 # v2.3.9
         env:
