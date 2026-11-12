@@ -27,10 +27,6 @@ El workflow está en `.github/workflows/pipeline.yml` y se dispara al abrir o ac
 
 ## Parte que se debe realizar en GitHub
 
-No hay todavía PR propios ni ejecuciones de Actions verificadas para este repositorio. Los resultados del proyecto de referencia no cuentan como evidencia de esta entrega.
-
-La publicación se deja para una etapa posterior por indicación de la alumna.
-
 1. Publicar este repositorio en una cuenta personal y conectar el remoto.
 2. Abrir un PR para comprobar el pipeline base.
 3. Crear cuatro ramas separadas desde main: secreto ficticio con formato de token, ruta con `eval`, dependencia `lodash@4.17.15` y fórmula `(1 + desc)`. Seguir los valores y pasos exactos de la guía de cátedra. Nunca utilizar una clave real.

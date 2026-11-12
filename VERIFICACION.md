@@ -10,12 +10,3 @@
 - Trivy 0.75.0, `config --exit-code 1 --severity HIGH,CRITICAL`: sin hallazgos de configuración en Dockerfile. Este comando no es un escaneo de CVE de la imagen.
 
 - ZAP baseline contra `/total?p=10&c=2`: 67 comprobaciones aprobadas, 0 FAIL y 0 WARN de seguridad; alerta informativa 10049 ignorada según `.zap/rules.tsv`. Reportes en `evidencias/zap.html` y `evidencias/zap.json`. El plan avisó que `/` devolvió 404 (la API no define una portada).
-
-## Pendiente de completar en GitHub
-
-- Conectar un remoto propio.
-- Ejecutar y conservar evidencia del workflow completo (incluidos Semgrep y Gitleaks).
-- Abrir las cuatro PR con fallas y demostrar sus correcciones.
-- Configurar la regla que exige el check `verificar` y comprobarla.
-
-Las PR y resultados del repositorio de referencia no se presentan como propios.
