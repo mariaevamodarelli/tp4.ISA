@@ -53,4 +53,4 @@ if (require.main === module) {
 
 module.exports = { app, total };
 
-const TOKEN_PRUEBA = "ghp_0123456789abcdefghijklmnopqrstuvwxyz";
+const TOKEN_PRUEBA = "ghp_K7mP2xR9vB4nT8qL3wF6zC1jH5sD0yA9uE2r";
