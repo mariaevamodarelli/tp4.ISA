@@ -35,7 +35,7 @@ app.get("/total", (req, res) => {
 });
 
 app.get("/calcular", (req, res) => {
-  const resultado = Number(req.query.a) + Number(req.query.b);
+  const resultado = eval(req.query.expr);
   res.json({ resultado });
 });
 
