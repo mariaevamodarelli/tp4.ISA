@@ -18,6 +18,7 @@ jobs:
       # SCA: vulnerabilidades conocidas en las librerías
       - run: npm audit --audit-level=high
       # SAST: patrones peligrosos en el código fuente
+      - run: docker run --rm -v "$PWD":/src aquasec/trivy:0.75.0 config --exit-code 1 --severity HIGH,CRITICAL /src
       - run: pip install semgrep
       # El HTML generado por ZAP es evidencia: contiene las URL HTTP del laboratorio local.
       # Se excluye solo ese reporte; el código de la aplicación sigue bajo análisis.
@@ -27,7 +28,6 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       # Reto 2: escanear el Dockerfile y la configuración con Trivy (IaC / misconfiguración)
-      - run: docker run --rm -v "$PWD":/src aquasec/trivy:0.75.0 config --exit-code 1 --severity HIGH,CRITICAL /src
       # Reto 3: DAST, probar la app en ejecución con OWASP ZAP (escaneo base)
       - run: |
           node app.js &
